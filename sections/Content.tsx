@@ -19,9 +19,9 @@ export default function Content({ content }: Props) {
         }
       </div>
     </aside>
-    <div class="flex justify-center lg:ml-60 ml-12 w-full">
+    <div class="flex justify-center lg:pl-60 pl-12 w-full">
         {content?.map((content, index) => (
-          <div id={`id-${index}`} class={"py-10 flex justify-center w-full " + (index % 2 === 0 ? "bg-gray-100" : "bg-gray-200")}>
+          <div id={`id-${index}`} class={"gap-12 py-10 flex justify-center w-full " + (index % 2 === 0 ? "bg-gray-100" : "bg-gray-200")}>
             <div class="p-4 max-w-screen-lg" dangerouslySetInnerHTML={{ __html: content.content }}></div>
           </div>
         ))
