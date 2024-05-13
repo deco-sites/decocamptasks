@@ -9,6 +9,81 @@
     font-family: var(--font-family);
   }
 
+  /** Base styles for UL */
+  ul {
+    list-style-type: disc;
+    margin-left: 1.5rem;
+  }
+
+  /** Base styles for OL */
+  ol {
+    list-style-type: decimal;
+    margin-left: 1.5rem;
+  }
+
+  /** Base styles for LI */
+  li {
+    margin-bottom: 0.5rem;
+  }
+
+  /** Base styles for H1 */
+  h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+
+  /** Base styles for H2 */
+  h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.75rem;
+  }
+
+  /** Base styles for H3 */
+  h3 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
+  /** Base styles for H4 */
+  h4 {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+  }
+
+  /** Base styles for H5 */
+  h5 {
+    font-size: 0.875rem;
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+  }
+
+  /** Base styles for H6 */
+  h6 {
+    font-size: 0.75rem;
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+  }
+
+  /** Base styles for anchor */
+  a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  a:hover {
+    color: #0056b3;
+  }
+  
+  a:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5);
+  }
+
   /** Remove default styles from input[type=number] */
   input[type=number]::-webkit-inner-spin-button,
   input[type=number]::-webkit-outer-spin-button {
