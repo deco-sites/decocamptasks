@@ -9,18 +9,19 @@ export interface Props {
 }
 
 export default function Content({ content }: Props) {
+  const filteredContent = content?.filter(c => c.show || (!c.publishDate || ((new Date(c.publishDate).getTime() <= (new Date()).getTime()))));
   return (
     <div>
     <aside class="fixed h-full lg:w-60 w-12 bg-gray-50 py-8 lg:px-4 px-2">
       <div class="space-y-2 overflow-hidden">
-        {content?.filter(c => c.show).map((content, index) => (
+          {filteredContent?.map((content, index) => (
           <a href={`#id-${index}`} class="block py-2 truncate">{`${content?.title}`}</a>
         ))
         }
       </div>
     </aside>
-    <div class="flex justify-center lg:pl-60 pl-12 w-full">
-        {content?.filter(c => c.show).map((content, index) => (
+    <div class="flex flex-col justify-center lg:pl-60 pl-12 w-full">
+        {filteredContent?.map((content, index) => (
           <div id={`id-${index}`} class={"gap-12 py-10 flex justify-center w-full " + (index % 2 === 0 ? "bg-gray-100" : "bg-gray-200")}>
             <div class="p-4 max-w-screen-lg" dangerouslySetInnerHTML={{ __html: content.content }}></div>
           </div>

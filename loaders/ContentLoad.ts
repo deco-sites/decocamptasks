@@ -1,7 +1,10 @@
 export interface Content {
     show?: boolean;
     title?: string;
-    anchor?: string;
+    /**
+     * @format date
+     */
+    publishDate?: string;
     /**
      * @format rich-text
      */
