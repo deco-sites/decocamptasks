@@ -29,17 +29,28 @@ export default function Content({ content }: Props) {
         {filteredContent?.map((content, index) => (
           <div
             id={`id-${index}`}
-            class={"gap-12 py-10 flex flex-col justify-center w-full " +
+            class={"gap-4 py-10 flex flex-col justify-center w-full " +
               (index % 2 === 0 ? "bg-gray-100" : "bg-gray-200")}
           >
+            <h1 class="px-4 max-w-screen-lg">{content.title}</h1>
             {content.links && (
               <div class="px-4 max-w-screen-lg">
-                <h1>Links</h1>
+                {content.topics && content.topics.length > 0 && <><h2>Topics</h2>
+                <ul>
+                  {content.topics.map(topic => <li>{topic}</li>)}
+                </ul>                
+                </>}
+                <h2>Links</h2>
                 <ul>
                   {content.links?.map((link) => (
                     <li>
                       <a href={link.url}>{link.description}</a>
+                      {link.bulletPoints &&
+                      <ul>
+                        {link.bulletPoints.map(bp => <li class="italic">{bp}</li>)}
+                      </ul>}
                     </li>
+                    
                   ))}
                 </ul>
               </div>

@@ -1,11 +1,12 @@
 export interface Content {
   show?: boolean;
   title?: string;
-  links?: { url: string; description: string }[];
+  links?: { url: string; description: string; bulletPoints?: string[] }[];
   /**
    * @format date
    */
   publishDate?: string;
+  topics?: string[];
   /**
    * @format rich-text
    */
