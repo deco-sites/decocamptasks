@@ -15,8 +15,8 @@ export default function Content({ content }: Props) {
       (new Date(c.publishDate).getTime() <= (new Date()).getTime()))
   );
   return (
-    <div>
-      <aside class="fixed h-full lg:w-60 w-12 bg-gray-50 py-8 lg:px-4 px-2">
+    <div class="flex flex-row">
+      <aside class="h-full lg:w-60 w-12 bg-gray-50 py-8 lg:px-4 px-2">
         <div class="space-y-2 overflow-hidden">
           {filteredContent?.map((content, index) => (
             <a href={`#id-${index}`} class="block py-2 truncate">
@@ -25,7 +25,7 @@ export default function Content({ content }: Props) {
           ))}
         </div>
       </aside>
-      <div class="flex flex-col justify-center lg:pl-60 pl-12 w-full">
+      <div class="flex flex-col justify-center w-full">
         {filteredContent?.map((content, index) => (
           <div
             id={`id-${index}`}
